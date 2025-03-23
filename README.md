@@ -66,8 +66,9 @@ Displays `chain_pair_pae_min` values (minimum predicted alignment error between 
    - The base directory for each mutant
    - The file prefix (shared by all 5 model files)
    - A readable name for labeling
-3. ▶️ Run the script in R.
-4. 📂 Open the Excel file and compare the interaction confidence scores across mutants and models.
+3. 📁 Update the `output_file` path to your preferred Excel export location.
+4. ▶️ Run the script in R.
+5. 📂 Open the Excel file and compare the interaction confidence scores across mutants and models.
 
 ---
 
@@ -86,7 +87,9 @@ install.packages("openxlsx")
 library(jsonlite)  # For JSON processing
 library(openxlsx)  # For writing to Excel
 
-# Define the folder configurations
+# Define the folder configurations where your summary_confidences_*.json located
+# I have 6 predictions, so I have 6 folder configurations
+# 📌 Note: Ensure file_prefix matches the naming exactly, e.g., "fold_A_B_C_summary_confidences_"
 folder_configs <- list(
   list(
     base_dir = "C:/Users/r02ar23/Desktop/250320_A_Single_Mutations/A_B_C/A_B_C/",
@@ -218,8 +221,7 @@ MIT License
 
 ## 👨‍🔬 Author
 **Arrosan Rajalingam** – [a.rajalingam.23@abdn.ac.uk](mailto:a.rajalingam.23@abdn.ac.uk)  
-Murakami Lab
+Murakami Lab  
 University of Aberdeen
 
 Feel free to contribute, fork, or adapt this for other multimeric complexes or additional metrics!
-
